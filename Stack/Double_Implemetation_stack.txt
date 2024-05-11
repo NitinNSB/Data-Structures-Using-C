@@ -1,0 +1,15 @@
+Double implementation of stack means using a single array to store two stacks.
+
+1.In case of static implementaion
+  
+   ->We take a array of fixed size 'n'.Now we will take two top pointers i.e top1 and top2.
+   ->top1 will start from starting of array and will be initialized with -1.
+   ->top2 will start from end of array and will be initialized with 'n'.
+   ->OverFlow condition will be top1+1 == top2.
+
+2.In case of dynamic Implementatiom
+  
+   ->We take a dynamic array of initial size 'n'.Now we will take two top pointers i.e top1 and top2.
+   ->top1 will start from starting of array and will be initialized with -1.
+   ->top2 will start from end of array and will be initialized with 'n'.
+   ->In this case also the overflow condition will be top1+1 == top2.But in this we can resize the array.
