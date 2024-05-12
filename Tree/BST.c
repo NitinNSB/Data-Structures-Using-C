@@ -179,7 +179,7 @@ void delete(node** t, int data) {
 
 void preorder(node* t) {
     if (t != NULL) {
-        printf("%d", t->data); // ***Print the current node's data***
+        printf("%d\n", t->data); // ***Print the current node's data***
         preorder(t->left);     // ***Traverse left subtree recursively***
         preorder(t->right);    // ***Traverse right subtree recursively***
     }
@@ -187,5 +187,9 @@ void preorder(node* t) {
 
 //Inorder Tranverse in BST
 void inorder(node* t){
-    
+    if(t != NULL){
+        inorder(t->left);       // First recur on left subtree
+        printf("%d\n",t->data); // Now deal with the node
+        inorder(t->right);      // Then recur on right subtree
+    }
 }
