@@ -17,6 +17,8 @@ void preorder(node*t);
 
 void inorder(node* t);
 
+void postorder(node* t); 
+
 int main(){
 
 }
@@ -185,7 +187,9 @@ void preorder(node* t) {
     }
 }
 
-//Inorder Tranverse in BST
+//Inorder Traverse in BST
+
+
 void inorder(node* t){
     if(t != NULL){
         inorder(t->left);       // First recur on left subtree
@@ -193,3 +197,16 @@ void inorder(node* t){
         inorder(t->right);      // Then recur on right subtree
     }
 }
+
+//Postorder Traverse in BST
+
+
+void postorder(node* t){
+    if(t != NULL){
+        postorder(t->left);     // First recur on left subtree
+        postorder(t->right);    // Then recur on right subtree
+        printf("%d\n",t->data); // Now deal with the node
+    }
+}
+
+
