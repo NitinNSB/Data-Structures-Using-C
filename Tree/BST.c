@@ -20,6 +20,39 @@ void inorder(node* t);
 void postorder(node* t); 
 
 int main(){
+    node* root = NULL; // Initialize an empty tree
+
+    // Test case 1: Insertion
+    insert(&root, 50);
+    insert(&root, 30);
+    insert(&root, 20);
+    insert(&root, 40);
+    insert(&root, 70);
+    insert(&root, 60);
+    insert(&root, 80);
+
+    // Test case 2: Inorder traversal (should print the nodes in sorted order)
+    printf("Inorder traversal:\n");
+    inorder(root);
+
+    // Test case 3: Search
+    int searchKey = 40;
+    node* foundNode = searchPosition(root, searchKey);
+    if (foundNode != NULL)
+        printf("\nFound node with data %d\n", foundNode->data);
+    else
+        printf("\nNode with data %d not found\n", searchKey);
+
+    // Test case 4: Deletion
+    int deleteKey = 30;
+    printf("\nDeleting node with data %d\n", deleteKey);
+    delete(&root, deleteKey);
+
+    // Inorder traversal after deletion
+    printf("\nInorder traversal after deletion:\n");
+    inorder(root);
+
+    return 0;
 
 }
 
