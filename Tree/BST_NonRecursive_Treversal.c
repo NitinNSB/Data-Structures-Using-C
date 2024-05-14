@@ -13,17 +13,23 @@ struct node{
 };
 struct node* stack = NULL;
 
+struct node* stack_2 = NULL;
+
 void insert(Bnode** t, int data);
 
 void delete(Bnode** t, int data);
 
-void push(Bnode* address);
+void push(struct node** stack,Bnode* address);
 
-Bnode* pop();
+Bnode* pop(struct node** stack);
 
-int checkEmpty();
+int checkEmpty(struct node** stack);
 
-void inOrder_Traversal(Bnode* root);
+void inorderTraversal(Bnode* root);
+
+void preorderTraversal(Bnode* root);
+
+void postorderTraversal(Bnode* root);
 
 int main() {
     Bnode* root = NULL; // Initialize an empty tree
@@ -36,7 +42,9 @@ int main() {
     insert(&root, 70);
     insert(&root, 60);
     insert(&root, 80);
-    inOrder_Traversal(root);
+    //inorderTraversal(root);
+    //preorderTraversal(root);
+    //postorderTraversal(root);
     return 0;
 
 }
@@ -175,27 +183,27 @@ void delete(Bnode** t, int data) {
 // pusing address of node in stack
 
 
-void push(Bnode* address){
+void push(struct node** stack, Bnode* address){
    struct node* newNode;
    newNode=(struct node*)malloc(sizeof(struct node));
    newNode->address = address;
-   newNode->next = stack;
-   stack = newNode;
+   newNode->next = (*stack);
+   (*stack) = newNode;
 }
 
 //popping node and returning address of node in BST,so that we can reach to that node in bst
 //i have stored the address of node of bst ,in the stack.
 
 
-Bnode* pop(){
-    if(stack==NULL){
+Bnode* pop(struct node** stack){
+    if(*stack==NULL){
         printf("Stack is empty...i.e underFlow\n");
         return NULL;
     }
     else{
-        struct node* temp = stack;
+        struct node* temp = *stack;
         Bnode* address = temp->address;
-        stack = temp->next;
+        *stack = temp->next;
         free(temp);
         return address;
     }
@@ -204,20 +212,69 @@ Bnode* pop(){
 // check if stack is empty
 
 
-int checkEmpty(){
-    return stack == NULL;
+int checkEmpty(struct node** stack){
+    return (*stack) == NULL;
 }
 
 //Inorder Traversal Non_Recursive approach
 
-void inOrder_Traversal(Bnode* root){
-    while(root != NULL || !checkEmpty()){
+void inorderTraversal(Bnode* root){
+    while(root != NULL || !checkEmpty(&stack)){
         while(root != NULL){
-            push(root);
+            push(&stack, root);
             root = root->left;
         }
-        Bnode* temp = pop();
+        Bnode* temp = pop(&stack);
         printf("%d\n",temp->data);
         root = temp->right;
+    }
+}
+
+// Preorder Traversal without recursion.
+
+
+void preorderTraversal(Bnode* root){
+    while(root != NULL || !checkEmpty(&stack)) {
+        while(root != NULL){
+            push(&stack, root);
+            printf("%d\n",root->data);
+            root = root->left;
+        }
+        Bnode* temp = pop(&stack);
+        root = temp->right;
+    }
+}
+
+// Postorder Traversal without recursion.
+
+
+void postorderTraversal(Bnode* root) {
+    // Push the root node onto the stack
+    push(&stack, root);
+    
+    // Loop until the stack is empty
+    while (!checkEmpty(&stack)) {
+        // Pop a node from the stack
+        Bnode* temp = pop(&stack);
+        
+        // Push the popped node onto stack_2
+        push(&stack_2, temp);
+        
+        // If the popped node has a left child, push it onto the stack
+        if (temp->left) {
+            push(&stack, temp->left);
+        }
+        
+        // If the popped node has a right child, push it onto the stack
+        if (temp->right) {
+            push(&stack, temp->right);
+        }
+    }
+    
+    // Print the nodes in postorder from stack_2
+    printf("Postorder traversal: ");
+    while (!checkEmpty(&stack_2)) {
+        Bnode* temp = pop(&stack_2);
+        printf("%d ", temp->data);
     }
 }
