@@ -23,13 +23,15 @@ int main(){
     node* root = NULL; // Initialize an empty tree
 
     // Test case 1: Insertion
-    insert(&root, 50);
-    insert(&root, 30);
-    insert(&root, 20);
-    insert(&root, 40);
-    insert(&root, 70);
-    insert(&root, 60);
-    insert(&root, 80);
+    insert(&root, 7);
+    insert(&root, 4);
+    insert(&root, 12);
+    insert(&root, 3);
+    insert(&root, 6);
+    insert(&root, 8);
+    insert(&root, 1);
+    insert(&root, 5);
+    insert(&root, 10);
 
     // Test case 2: Inorder traversal (should print the nodes in sorted order)
     printf("Inorder traversal:\n");
@@ -44,7 +46,7 @@ int main(){
         printf("\nNode with data %d not found\n", searchKey);
 
     // Test case 4: Deletion
-    int deleteKey = 30;
+    int deleteKey = 3;
     printf("\nDeleting node with data %d\n", deleteKey);
     delete(&root, deleteKey);
 
@@ -197,14 +199,16 @@ void delete(node** t, int data) {
         //*****Deleting the node with single child
 
         else {
-            parent->data = current->data;
-            if(parent->data > current->data) {
-                parent->left = NULL;
+            // Determine if the current node is the left or right child of its parent
+            if (parent->left == current) {
+                // Update the parent's left pointer to the current node's child
+                parent->left = (current->left != NULL) ? current->left : current->right;
             } else {
-                parent->right = NULL;
+                // Update the parent's right pointer to the current node's child
+                parent->right = (current->left != NULL) ? current->left : current->right;
             }
+            // Free the memory allocated for the current node
             free(current);
-            current = NULL;
         }
     }
 }
