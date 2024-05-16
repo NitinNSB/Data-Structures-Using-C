@@ -34,7 +34,9 @@
 
 - <u>Height of Node</u>: Height of a node represents the number of edges on the longest path between that node and a leaf.
 
-- <u>Path</u>: Path is a number of successive edges from source node to destination node.
+- <u>Depth of Node</u> : For example depth of node "N" will be length of path from root to N.
+
+- <u>Path</u>: In a tree, a path is a sequence of connected edges that starts from one node and leads to another node, without any loops or cycles.
 
 - <u>Branch</u>: Branch is a path which ends at leaf node.
 
