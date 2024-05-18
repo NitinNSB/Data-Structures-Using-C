@@ -7,7 +7,7 @@
 
 #### Why Do We Need an AVL Tree?
 
-- As we learned about skewed Binary tree which is either dominated by left nodes or right nodes. This make makes the operation on BST to take O(n) time, where n is the number of nodes in the tree i.e. insertion, deletion, searching.So here comes the AVL tree :
+- As we learned about skewed Binary tree which is either dominated by left nodes or right nodes,these perticular types of BST, makes the operation on BST to take O(n) time, where n is the number of nodes in the tree i.e. insertion, deletion, searching.So here comes the AVL tree :
   - AVL trees maintain a balance factor for each node, which is the difference in height between the left and right subtrees. This balance factor is kept at -1, 0, or +1.
   - After every insertion or deletion, AVL trees perform rotations to ensure that the tree remains balanced.
   - This self-balancing ensures that the height of the tree remains O(log n), where n is the number of nodes.
