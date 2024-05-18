@@ -34,3 +34,9 @@
 4. <b>Right-Left Rotation</b>:A right-left rotation is a combination in which first right rotation takes place after that left rotation executes.
 
    ![alt text](images/Rightleft.png)
+
+#### Aplications of AVL tree
+
+- It is applied in corporate areas and storyline games.
+- It is used to index huge records in a database and also to efficiently search in that.
+- For all types of in-memory collections, including sets and dictionaries, AVL Trees are used.
