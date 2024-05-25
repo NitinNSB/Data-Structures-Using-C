@@ -87,3 +87,17 @@
 
   - Key points:
     ![alt text](<images/b tree explain.jpg>)
+
+  - <b>Note:</b> Node with Even Number of Keys:
+
+    - Let the node temporarily contain 2m keys: [k1, k2, ..., km, km+1, ..., k2m].
+
+    - When splitting, the middle key to move up, is the (m+1)th key (considering one-based indexing). For zero-based indexing, it is the (m)th key. <b>Choice is yours,but follow only one in each insertion.</b>
+
+    - But mostly, we consider the middle key as the (m)th key.
+
+- <b>Deletion</b>
+
+  - I will suggest you to watch the video for better understanding.Because it is a bit complex to write here.
+
+  - Link : `https://youtu.be/0NvlyJDfk1M?si=FLluiH6oP258sY2m` watch at >= 1.25x.
