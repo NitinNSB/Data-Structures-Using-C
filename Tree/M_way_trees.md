@@ -57,7 +57,7 @@
 
   ![alt text](images/M_Way_Tree.png)
 
-# B-Trees
+# B Trees
 
 <b>NOTE:: </b>Ceiling Function : The ceiling function, often denoted as ⌈x⌉, is a mathematical function that maps a real number to the smallest integer greater than or equal to that number.
 
@@ -101,3 +101,12 @@
   - I will suggest you to watch the video for better understanding.Because it is a bit complex to write here.
 
   - Link : `https://youtu.be/0NvlyJDfk1M?si=FLluiH6oP258sY2m` watch at >= 1.25x.
+
+# Difference between B Tree and B+ Tree:
+
+| B Trees                                                 | B+ Trees                                                       |
+| ------------------------------------------------------- | -------------------------------------------------------------- |
+| Data is stored in leaf nodes as well as internal nodes. | Data is stored in only leaf nodes.                             |
+| Searching is slower and deletion is complex.            | Searching is faster,deletion is easy(directly from leaf node). |
+| No redundant search key.                                | Redundant key may present.                                     |
+| Leaf nodes are not linked together.                     | Leaf nodes are linked together.                                |
