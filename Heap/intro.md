@@ -21,10 +21,10 @@
 
 # How to find the index of , parent and children of a node?
 
-- The parent of the node at index i is given by the formula (i-1)/2.
+- The parent of the node at index i is given by the formula: floor value of ((i-1)/2).
 
-- The left child of the node at index i is given by the formula 2\*i + 1.
+- The left child of the node at index i is given by the formula: 2\*i + 1.
 
-- The right child of the node at index i is given by the formula 2\*i + 2.
+- The right child of the node at index i is given by the formula: 2\*i + 2.
 
 <b>Note : </b> Try to apply these formulas on above given diagram to understand better.
