@@ -13,4 +13,4 @@
 
 ## Name of operations on queue are insertion() {also known as Enqueue} ,deletion(){also known as Dequeue}, getFront(), getRear().
 
-## Exampe in programming ::::: pages in prining a pdf
+## Exampe in programming ::::: pages in printing a pdf
