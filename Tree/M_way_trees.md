@@ -94,8 +94,6 @@
 
     - When splitting, the middle key to move up, is the (m+1)th key (considering one-based indexing). For zero-based indexing, it is the (m)th key. <b>Choice is yours,but follow only one in each insertion.</b>
 
-    - But mostly, we consider the middle key as the (m)th key.
-
 - <b>Deletion</b>
 
   - I will suggest you to watch the video for better understanding.Because it is a bit complex to write here.
