@@ -1,6 +1,8 @@
 #include<stdio.h>
 int binarySearch(int arr[],int arrayLength,int value);
+
 int findFrequency(int arr[],int arrayLength,int value);
+
 int main(){
     int maxSize,i,round,temp;
 

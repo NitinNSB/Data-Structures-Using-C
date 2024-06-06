@@ -48,11 +48,11 @@ int main(){
     }
     //sorting array using bubble sort
 
-    for(round=0;round<(maxSize-1);round++){
+    for(round=0; round<(maxSize-1); round++){
         int flag=0;
         /*Ish variable ka use isliyai kiya hai ki tujai pata lag jayai ki ish itteration mai koi 
         swappping nahi hue hai,iska matlab hai ki array sorted hai,so you can break the loop*/
-        for(i=0;i<(maxSize-round-1);i++){
+        for(i=0; i<(maxSize-round-1); i++){
             if(array[i]>array[i+1]){
                 flag=1;
                 temp=array[i+1];
@@ -64,8 +64,9 @@ int main(){
             break;
         }
     }
+    
     printf("After sorting :\n");
-    for(int i=0;i<maxSize;i++){
+    for(int i=0; i<maxSize; i++){
         printf("%d\n",array[i]);
     }
     return 0;

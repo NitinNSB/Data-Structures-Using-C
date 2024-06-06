@@ -1,6 +1,6 @@
 ## A Queue is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.
 
-![alt text](Queue-Data-structure1.png)
+![alt text](Images/Queue-Data-structure1.png)
 
 ## In queue One end is for insertion and another One is for deletion.
 

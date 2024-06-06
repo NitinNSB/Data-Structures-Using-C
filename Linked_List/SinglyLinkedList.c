@@ -12,7 +12,7 @@ struct node* insertBeginning(struct node* head,int data);
 
 void  insertAfter(struct node* head,int data,int afterData);
 
-struct node* insertBefore(struct node* head,int data,int afterData);
+struct node* insertBefore(struct node* head,int data,int beforeData);
 
 void delLast(struct node** head);
 

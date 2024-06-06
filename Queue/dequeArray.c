@@ -201,7 +201,6 @@ void displayDeque(struct deque *d) {
         printf("%d ", d->ptr[i]);
         i = (i + 1) % d->capacity; // Moves to the next index, wrapping around if necessary
     } while (i != (d->rear + 1) % d->capacity); // Loop until we reach rear + 1, handling wrap-around
-    
     printf("\n");
 }
 

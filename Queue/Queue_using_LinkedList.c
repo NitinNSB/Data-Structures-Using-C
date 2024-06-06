@@ -16,7 +16,7 @@ void getRear(struct node* queue);
 void getFront(struct node* queue);
 
 int main(){
-     struct node* queue = NULL;
+    struct node* queue = NULL;
     struct node* rear = NULL;
 
     // Test cases for enqueue
