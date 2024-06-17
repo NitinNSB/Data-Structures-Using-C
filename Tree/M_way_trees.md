@@ -94,8 +94,6 @@
 
     - When splitting, the middle key to move up, is the (m+1)th key (considering one-based indexing). For zero-based indexing, it is the (m)th key. <b>Choice is yours,but follow only one in each insertion.</b>
 
-    - But mostly, we consider the middle key as the (m)th key.
-
 - <b>Deletion</b>
 
   - I will suggest you to watch the video for better understanding.Because it is a bit complex to write here.
@@ -104,9 +102,9 @@
 
 # Difference between B Tree and B+ Tree:
 
-| B Trees                                                 | B+ Trees                                                       |
-| ------------------------------------------------------- | -------------------------------------------------------------- |
-| Data is stored in leaf nodes as well as internal nodes. | Data is stored in only leaf nodes.                             |
-| Searching is slower and deletion is complex.            | Searching is faster,deletion is easy(directly from leaf node). |
-| No redundant search key.                                | Redundant key may present.                                     |
-| Leaf nodes are not linked together.                     | Leaf nodes are linked together.                                |
+| B Trees                                                                | B+ Trees                                                       |
+| -------------------------------------------------------                | -------------------------------------------------------------- |
+| Every key in leaf nodes as well as internal nodes have record pointers.| Record pointers are only present in leaf nodes.                |
+| Searching is slower and deletion is complex.                           | Searching is faster,deletion is easy(directly from leaf node). |
+| No redundant search key.                                               | Redundant key may present.                                     |
+| Leaf nodes are not linked together.                                    | Leaf nodes are linked together.                                |

@@ -20,7 +20,8 @@
 
 - Structure :
 
-```c struct Node{
+```c
+  struct Node{
   int value;
   Node* left;
   Node* right;
